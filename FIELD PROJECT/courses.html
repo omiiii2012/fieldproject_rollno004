@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shraddha Classes | Courses</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <h1>SHRADDHA CLASSES</h1>
+    <p class="tagline">Your Path to Success</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="content">
+  <h2>Our Courses</h2>
+
+  <div class="course-filter">
+    <label for="course-medium">Select Medium:</label>
+    <select id="course-medium" name="course-medium" required>
+      <option value="">--Select--</option>
+      <option value="marathi">Marathi Medium</option>
+      <option value="semi">Semi-English Medium</option>
+      <option value="english">English Medium</option>
+    </select>
+  </div>
+
+  <!-- Course Sections -->
+  <div class="course-section" data-medium="marathi" style="display:none;">
+    <h3>Marathi Medium</h3>
+    <div class="course-cards">
+      <div class="card"><h4>Jr KG / Sr KG</h4><p>₹1000 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+      <div class="card"><h4>1st Standard</h4><p>₹1300 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+      <div class="card"><h4>2nd Standard</h4><p>₹1800 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+    </div>
+  </div>
+
+  <div class="course-section" data-medium="semi" style="display:none;">
+    <h3>Semi-English Medium</h3>
+    <div class="course-cards">
+      <div class="card"><h4>Jr KG / Sr KG</h4><p>₹1200 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+      <div class="card"><h4>1st Standard</h4><p>₹2000 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+      <div class="card"><h4>2nd Standard</h4><p>₹2800 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+    </div>
+  </div>
+
+  <div class="course-section" data-medium="english" style="display:none;">
+    <h3>English Medium</h3>
+    <div class="course-cards">
+      <div class="card"><h4>Jr KG / Sr KG</h4><p>₹1500 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+      <div class="card"><h4>1st Standard</h4><p>₹2300 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+      <div class="card"><h4>2nd Standard</h4><p>₹3100 per year</p><a href="register.html"><button>Enroll Now</button></a></div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const courseSelect = document.getElementById('course-medium');
+  const courseSections = document.querySelectorAll('.course-section');
+
+  courseSelect.addEventListener('change', function() {
+    const selectedMedium = this.value;
+    courseSections.forEach(section => {
+      section.style.display = section.dataset.medium === selectedMedium ? 'block' : 'none';
+    });
+  });
+});
+</script>
+
+<footer>
+  <p> SHRADDHA CLASSES</p>
+  <p>FIELD PROJECT BY OM BAJAGE 04</p>
+</footer>
+</body>
+</html>
